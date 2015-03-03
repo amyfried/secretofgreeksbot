@@ -149,16 +149,18 @@ def createTweet():
 	word2=generateRandomWord(randgreek2)
 	word3=generateRandomWord(randgreek3)
 
-	alltogether = randgreek1 + " " + randgreek2 + " " + randgreek3 + ":" + " " + "This organization secretly means...." + "\n" + word1 + word2 + word3
+	alltogether = randgreek1 + " " + randgreek2 + " " + randgreek3 + ":" + " " + "This organization secretly means...." + " " + word1 + word2 + word3
 	return alltogether.replace("\n", " ")
 	
+def runTweet():
+    for line in f:
+        tweeted=createTweet()
+        print tweeted
+        api.update_status(status=tweeted)
+        time.sleep(300)#Tweet every 5 minutes
 
 # allows you to discriminate between importing and opening directly
 # if importing then functions wont occur without being called
 # if open directly then an calls below will occur
 if __name__ == '__main__':
-	tweeted=createTweet()
-	print tweeted
-	api.update_status(status=tweeted)
-	time.sleep(300)#Tweet every 5 minutes
-
+	runTweet()
