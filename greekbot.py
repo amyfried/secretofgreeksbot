@@ -19,7 +19,7 @@ parseText(argfile)
 MY_CONSUMER_KEY = '......'
 MY_CONSUMER_SECRET = '.....'
 MY_ACCESS_TOKEN_KEY = '.....'
-MY_ACCESS_TOKEN_SECRET = '......'
+MY_ACCESS_TOKEN_SECRET = '.......'
 auth = tweepy.OAuthHandler(MY_CONSUMER_KEY, MY_CONSUMER_SECRET)
 auth.set_access_token(MY_ACCESS_TOKEN_KEY, MY_ACCESS_TOKEN_SECRET)
 api = tweepy.API(auth)
@@ -160,5 +160,5 @@ if __name__ == '__main__':
 	tweeted=createTweet()
 	print tweeted
 	api.update_status(status=tweeted)
-	time.sleep(300)#Tweet every 15 minutes
+	time.sleep(300)#Tweet every 5 minutes
 
